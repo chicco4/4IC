@@ -1,0 +1,14 @@
+Quando un thread viene inizializzato è allo stato NEW.
+Quando il programma fà partire il metodo .start() il thread passa dallo stato NEW allo stato ready ed inseguito 
+allo stato RUNNABLE.
+
+
+Un thread in fase di esecuzione, può passare allo stato: 
+1)TIMED_WAITING quando viene utilizato il metodo sleep();
+2)WAITING quando viene utilizzato il metodo .join();
+3)BLOCKED quando questo thread è runnable e deve attendere per entrare in un'istruzione synchronized
+4)TERMINATED quando le mansioni che doveva svolgere sono state compiute e quindi termina.
+
+Ho svolto l'esercizio creando una classe osservatore figlia della classe thread con un metodo chiamato
+update() che ha lo scopo di guardare ogni 1 secondo lo stato del thread inserito come parametro
+nel costruttore di osservatore.
