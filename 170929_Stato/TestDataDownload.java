@@ -4,15 +4,12 @@
  * and open the template in the editor.
  */
 package testfileclock;
+
 import java.util.Date;
 
 import java.util.concurrent.TimeUnit;
 
-
-
 public class TestDataDownload {
-
-
 
     public static void main(String[] args) {
 
@@ -30,17 +27,13 @@ public class TestDataDownload {
 
 }
 
-
-
 class DataDownloader implements Runnable {
-
-
 
     @Override
 
     public void run() {
 
-        System.out.printf("Connessione: %s\n",new Date());
+        System.out.printf("Connessione: %s\n", new Date());
 
         try {
 
@@ -52,21 +45,15 @@ class DataDownloader implements Runnable {
 
         }
 
-        System.out.printf("Download finito: %s\n",new Date());
+        System.out.printf("Download finito: %s\n", new Date());
 
     }
 
 }
 
-
-
 class NetworkConnection extends Thread {
 
-
-
-    private Thread td; 
-
-
+    private Thread td;
 
     NetworkConnection(Thread td, String name) {
 
@@ -75,8 +62,6 @@ class NetworkConnection extends Thread {
         this.td = td;
 
     }
-
-
 
     @Override
 
@@ -87,8 +72,8 @@ class NetworkConnection extends Thread {
         try {
 
             Thread observer = new Thread(new Observ(Thread.currentThread()));       //create a new thread 
-            observer.start();    
-            td.join();  
+            observer.start();
+            td.join();
 
         } catch (InterruptedException e) {
 
@@ -96,51 +81,44 @@ class NetworkConnection extends Thread {
 
         }
 
-        System.out.printf("Network non connessa: %s\n",new Date());
+        System.out.printf("Network non connessa: %s\n", new Date());
 
     }
 
-
-
     public class Observ implements Runnable {
 
-
+        private State thisState;
         private Thread Observable;
 
-
         /**
-         * 
+         *
          * @param currentThread the thread that u want to see the states
          */
         private Observ(Thread currentThread) {
-        Observable = currentThread;
+            Observable = currentThread;
         }
 
         @Override
 
         public void run() {
 
+            while (thisState != State.TERMINATED) {
+                if (thisState != Observable.getState()) {
+                    thisState = Observable.getState();
+                    System.out.println("current State of thread " + Observable + " is: " + thisState);
+                }
+                try {
 
+                    TimeUnit.SECONDS.sleep(1);
 
-            if (Observable.isAlive()) {    
-                System.out.println(Observable.getState().name());   //if thread is not killed, it prints the actual state of the thread
+                } catch (InterruptedException e) {
+
+                    e.printStackTrace();
+
+                }
 
             }
-            /**
-             * untill the thread is running it will do nothing
-             *
-             */
-            while(Observable.getState()!=Thread.State.BLOCKED){
-
-            }
-                //print the state when it change
-             System.out.println(Observable.getState().name());
-
         }
 
-
-
     }
-
 }
-
