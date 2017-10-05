@@ -128,7 +128,7 @@ class NetworkConnection extends Thread {
             }
             /**
              * untill the thread is running it will do nothing
-             * or it will print it a lot of times
+             *
              */
             while(Observable.getState()!=Thread.State.BLOCKED){
 
