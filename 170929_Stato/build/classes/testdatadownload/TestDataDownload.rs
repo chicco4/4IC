@@ -1,4 +1,0 @@
-Osservatore
-TestDataDownload
-NetworkConnection
-DataDownloader
