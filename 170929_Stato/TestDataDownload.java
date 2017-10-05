@@ -47,25 +47,37 @@ class NetworkConnection extends Thread {
     }
 }
 
-class Terminated extends Thread{
-	private Thread t1, t2;
-	
-	Terminated(Thread td, Thread tn){
-		this.t1=td;
-		this.t2=tn;
-	}
-	
-	@Override
-	public void run (){
-		System.out.println("Thread 1 start ");
-		System.out.println("Thread 2 start ");
-		try{
-			TimeUnit.SECONDS.sleep(1);
-		}
-		catch (InterruptedException e){
-			e.printStackTrace();
-		}
-		System.out.println("Threads 1 stopped ");
-		System.out.println("Threads 2 stopped ");
-	}
+public class Osservatore extends Thread{
+	private final Thread t1;
+	private final Thread t2;
+    
+    public Osservatore(Thread t1, Thread t2){
+        this.t1 = t1;
+        this.t2 = t2;
+    }
+
+    @Override
+    public void run(){
+        State s1 = t1.getState();
+        State s2 = t2.getState();
+        System.out.println("\t" + t1.getName() + " is " + s1);
+        System.out.println("\t" + t2.getName() + " is " + s2);
+
+        for(;;){
+            if(!t1.getState().equals(s1)) {
+                s1 = t1.getState();
+                System.out.println("\t" + t1.getName() + " is " + s1);
+            }
+            if(!t2.getState().equals(s2)){
+                s2 = t2.getState();
+                System.out.println("\t" + t2.getName() + " is " + s2);
+            }
+            try{
+                TimeUnit.MILLISECONDS.sleep(10);
+            } catch (InterruptedException e) {
+                System.out.println("\tI'm no more needed");
+                break;
+            }
+        }
+    }
 }
