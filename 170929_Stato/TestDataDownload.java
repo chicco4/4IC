@@ -75,7 +75,6 @@ public class Osservatore extends Thread{
             try{
                 TimeUnit.MILLISECONDS.sleep(10);
             } catch (InterruptedException e) {
-                System.out.println("\tI'm no more needed");
                 break;
             }
         }
