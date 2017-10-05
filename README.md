@@ -1,3 +1,14 @@
-# Consegne per la 4IC
+# 4IC
 
-Il branch master è utilizzato dal docente, ogni singolo studente ha un suo branch personale.
+## Stoyan
+
+### TPSIT
+
+#### Excercises
+
+```
+1) Thread stops another thread
+```
+```
+2) "170929_Stato": Thread status viewer
+```
