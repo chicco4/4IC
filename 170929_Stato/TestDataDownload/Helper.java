@@ -1,5 +1,5 @@
 package testdatadownload;
-class Helper implements HelperInterface{
+class Helper implements Runnable{
     private Thread tn;
     private String name;
     public Helper(Thread currentThread, String name){
