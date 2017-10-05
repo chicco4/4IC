@@ -1,6 +1,3 @@
-
-package javathreadsclock;
-
 /**
  *
  * @author giovanni.stevanato
