@@ -12,7 +12,7 @@ class DataDownloader implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.printf("Download finished: %s\n",
+        System.out.printf("Download finito: %s\n",
                 new Date());
     }
 }

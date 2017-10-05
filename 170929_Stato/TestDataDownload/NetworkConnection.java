@@ -8,7 +8,7 @@ class NetworkConnection extends Thread {
     }
     @Override
     public void run() {
-        System.out.printf("Network connected: %s\n",new Date());
+        System.out.printf("Network connesso: %s\n",new Date());
         try {
             Thread oss1 = new Observer(Thread.currentThread(),"NetworkConnection");
             oss1.start();
@@ -16,6 +16,6 @@ class NetworkConnection extends Thread {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.printf("Network not connected: %s\n",new Date());
+        System.out.printf("Network non connesso: %s\n",new Date());
     }
 }
