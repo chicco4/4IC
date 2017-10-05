@@ -12,3 +12,5 @@ Un thread in fase di esecuzione, può passare allo stato:
 Ho svolto l'esercizio creando una classe osservatore figlia della classe thread con un metodo chiamato
 update() che ha lo scopo di guardare ogni 1 secondo lo stato del thread inserito come parametro
 nel costruttore di osservatore.
+
+(La classe osservatore è all'interno del file .java chiamato TestDataDownload)
