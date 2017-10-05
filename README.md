@@ -1,2 +1,2 @@
-# TestDataDownload
-###### ho creato un altro Thread per verificare quando il thread osservato cambia di stato dato 
+#Simone Bolzonella
+###### Studente ITIS C.Zuccante Classe 4^IC
