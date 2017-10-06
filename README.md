@@ -1,3 +1,2 @@
-﻿# scaggiantefederico@4IC
+# scaggiantefederico@4IC
 Questo branch contiene gli esercizi di Tpsit.
-
