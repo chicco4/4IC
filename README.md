@@ -2,15 +2,15 @@
 Student of ITIS Zuccante - 4IC
 
 ## Language & Ide:
-> #### Java:
->> * NetBeans IDE 8.2
+#### Java:
+> * NetBeans IDE 8.2
 
-> #### C & C++:
->> * Dev-C++
->> * CodeBlocks
+#### C & C++:
+> * Dev-C++
+> * CodeBlocks
 
-> #### Both:
->> * Scite
->> * Notepad++
+#### Both:
+> * Scite
+> * Notepad++
 
 
