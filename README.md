@@ -12,5 +12,3 @@ Student of ITIS Zuccante - 4IC
 #### Both:
 > * Scite
 > * Notepad++
-
-
