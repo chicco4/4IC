@@ -1,0 +1,4 @@
+Quando un thread viene inizializzato viene spostato nello stato NEW.
+Successivamente, una volta chiamato il metodo .start() viene spostato nello stato RUNNABLE.
+Quando richiamato il metodo td.join() il thread passa allo stato WAITING e appunto aspetta che il thread td passi allo stato TERMINATED.
+Una volta che td ha raggiunto lo stato TERMINATED il nostro thread ritorna allo stato RUNNABLE.
