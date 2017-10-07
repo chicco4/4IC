@@ -1,3 +1,4 @@
-# PISCIOTTA DAVIDE :boom:
-## IDE impiegati:
-- java: IntelliJ IDEA
+# PISCIOTTA DAVIDE
+## IDE utilizzati:
+- ### java:
+	- IntelliJ IDEA
