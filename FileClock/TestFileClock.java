@@ -1,4 +1,3 @@
-package fileclock;
 import java.util.Random;
 public class TestFileClock{
     public static void main(String[] args){

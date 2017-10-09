@@ -1,4 +1,4 @@
-package testdatadownload;
+
 class Helper implements Runnable{
     private Thread tn;
     private String name;
