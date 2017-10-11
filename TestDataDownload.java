@@ -6,10 +6,11 @@ public class TestDataDownload {
         DataDownloader ddl = new DataDownloader();
         Thread td = new Thread(ddl,"DataDownloaderThread");
         Thread tn = new NetworkConnection(td,"NetworkConnectionThread");
-	    Thread osservatore = new Osservatore();
-	    tn.start();
-        td.start();
-    }
+    	Thread oss=new Osservatore(tn);
+	tn.start();
+	td.start();
+	oss.start();
+	}
 }
 
 
@@ -52,9 +53,9 @@ class NetworkConnection extends Thread {
     }
 }
 
-class osservatore implements Runnable{
+class Osservatore implements Runnable{
 	private Thread osservato;
-	osservatore(Thread osservato){
+	Osservatore(Thread osservato){
 		this.osservato=osservato;
 	}
 	public void aggiornaStato(){
@@ -65,13 +66,12 @@ class osservatore implements Runnable{
         
         aggiornaStato();
         
-        while (osservato.name().getState()!="TERMINATED") {
+        while (osservato.getState().name()!="TERMINATED") {
             String statoPrecedente = osservato.getState().name();
 
             while (statoPrecedente==osservato.getState().name()) {
+         aggiornaStato();
             }
-	    aggiornaStato(); 
         }
-        
     }
 }
