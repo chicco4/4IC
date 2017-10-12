@@ -13,6 +13,7 @@ public class Task implements Runnable{
 		random = new Random((new Date()).getTime());
 	}
 	
+	
 	@Override
 	public void run(){
 		int indice = 0;

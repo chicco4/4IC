@@ -2,7 +2,7 @@ import java.util.concurrent.Semaphore;
 
 public class Risorsa{
 	public Semaphore semaphore;
-	private int numero;
+	//private int numero;
 	
 	public Risorsa(int numero){
 		this.numero = numero;
