@@ -6,39 +6,22 @@ import java.util.ArrayList;
 
 public class Task implements Runnable{
 	private Random random;
-	private Risorsa risorsa1;
-	private Risorsa risorsa2;
-	private boolean dueRisorse;
+	private Risorsa[] risorse;
 	
-	public Task(Risorsa risorsa){
+	public Task(Risorsa[] risorse){
+		this.risorse = risorse;
 		random = new Random((new Date()).getTime());
-		this.risorsa1 = risorsa;
-		dueRisorse = false;
-	}
-	
-	public Task(Risorsa risorsa1, Risorsa risorsa2){
-		random = new Random((new Date()).getTime());
-		this.risorsa1 = risorsa1;
-		this.risorsa2 = risorsa2;
-		dueRisorse = true;
 	}
 	
 	@Override
 	public void run(){
-		try{
-			TimeUnit.SECONDS.sleep(random.nextInt(4) + 1); //aspetto del tempo (1-4 sec)
-			if(!dueRisorse){
-				risorsa1.semaphore.acquire();
-				//inizio esecuzione operazioni sulla risorsa
-				risorsa1.semaphore.release(); //termino operazioni sulla risorsa
-			} else {
-				risorsa1.semaphore.acquire(); 
-				//inizio esecuzione operazioni sulla risorsa 1
-				risorsa2.semaphore.acquire();
-				//inizio esecuzione operazioni sula risorsa 2
-				risorsa1.semaphore.release(); //termino operazioni sulla risorsa 1
-				risorsa2.semaphore.release(); //termino operazioni sulla risorsa 2
-			}
-		} catch(InterruptedException e){}	
+		int indice = 0;
+		while(indice <= risorse.length){
+			if(indice < risorse.length) risorse[indice].semaphore.acquire(); //apertura risorsa numero indice
+			//operazioni
+			
+			if(indice > 0) risorse[indice-1].semaphore.release(); //chiusura risorsa numero indice-1
+			indice++;
+		}
 	}
 }

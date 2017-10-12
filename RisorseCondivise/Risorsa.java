@@ -9,10 +9,10 @@ public class Risorsa{
 		semaphore = new Semaphore(1, true);
 	}
 	
-	public void setNumero(int arg){
+	/*public void setNumero(int arg){
 		this.numero = arg;
 	}
 	public int getNumero(){
 		return numero;
-	}
+	}*/
 }
