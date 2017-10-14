@@ -1,9 +1,9 @@
-package bubbleSort;
+package quickSort;
 
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-public class ExampleBubbleSort {
+public class ExampleQuickSort {
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLUE = "\u001B[34m";
@@ -16,7 +16,7 @@ public class ExampleBubbleSort {
         System.out.println("Inserisci il numero di elementi da generare :");
         int numero = input.nextInt();
         System.out.println("_____________________________________________");
-        BubbleSort b = new BubbleSort();
+        QuickSort b = new QuickSort();
 
         /**
          * riempimento dell'array
@@ -31,16 +31,18 @@ public class ExampleBubbleSort {
         t.start();
         long estimatedTime = System.nanoTime() - startTime;
 
+        TimeUnit.MILLISECONDS.sleep(10);
+
         int count = 0;
         for (int h : num) {
+            System.out.print(h + " ");
             count++;
         }
-
-        TimeUnit.MILLISECONDS.sleep(20);
 
         /**
          * print the inters count
          */
+        System.out.println("");
         System.out.println("____________________________________");
         System.out.println(ANSI_PURPLE + "Total amount of Integers = " + count + " item" + ANSI_RESET);
         System.out.println("____________________________________");
