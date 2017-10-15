@@ -3,7 +3,9 @@
 
 _____________________________________________________________________________________
 
-## [ ] bubbleSort
+![Sorting System](https://i.imgur.com/RVvrmit.png)
+_____________________________________________________________________________________
+## :bento: bubbleSort
 
 > * **[ExampleBubbleSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/bubbleSort/ExampleBubbleSort.java)** , *Main di prova*
 >
@@ -11,7 +13,7 @@ ________________________________________________________________________________
 >
 > * **[threadSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/bubbleSort/threadSort.java)** , *Classe d'appoggio*
 
-## [ ] insertionSort
+## :sushi: insertionSort
 
 > * **[ExampleInsertionSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/insertionSort/ExampleInserionSort.java)** , *Main di prova*
 >
@@ -19,7 +21,7 @@ ________________________________________________________________________________
 >
 > * **[threadSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/insertionSort/threadSort.java)** , *Classe d'appoggio*
 
-## [ ] mergeSort
+## :rice_ball: mergeSort
 
 > * **[ExampleMergeSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/mergeSort/ExampleMergeSort.java)** , *Main di prova*
 >
@@ -27,7 +29,7 @@ ________________________________________________________________________________
 >
 > * **[threadSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/mergeSort/threadSort.java)** , *Classe d'appoggio*
 
-## [ ] quickSort
+## :ramen: quickSort
 
 > * **[ExampleQuickSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/quickSort/ExampleQuickSort.java)** , *Main di prova*
 >
@@ -35,7 +37,7 @@ ________________________________________________________________________________
 >
 > * **[threadSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/quickSort/threadSort.java)** , *Classe d'appoggio*
 
-## [ ] radixSort
+## :oden: radixSort
 
 > * **[ExampleRadixSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/radixSort/ExampleRadixSort.java)** , *Main di prova*
 >
@@ -43,13 +45,17 @@ ________________________________________________________________________________
 >
 > * **[threadSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/radixSort/threadSort.java)** , *Classe d'appoggio*
 
-## [ ] radixSort
+## :dango: radixSort
 
 > * **[ExampleSelectorSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/selectorSort/ExampleSelectorSort.java)** , *Main di prova*
 >
 > * **[SelectorSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/selectorSort/SelectorSort.java)** , *Classe principale*
 >
 > * **[threadSort](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/selectorSort/threadSort.java)** , *Classe d'appoggio*
+
+## :sake: compareArray [without thread - only for compare]
+
+> * **[compareArray](https://github.com/ObZenTish/TPSIT_4IC/blob/master/OrdinaArray/compareArray/compareArray.java)** , *Main di prova*
 
 _____________________________________________________________________________________
 
