@@ -7,9 +7,4 @@ Linguaggi:
 <UL>
   <LI> Java
 </UL> <BR>
-IDE:
-=========================
-<UL>
-  <LI> NetBeans
-</UL>
   </BODY>
