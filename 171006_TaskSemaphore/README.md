@@ -1,5 +1,6 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1348\cocoasubrtf170
-{\fonttbl}
-{\colortbl;\red255\green255\blue255;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
-}
+Esercizio 20/10/2017
+ravagnan.giacomo
+
+Risorsa: che può essere acquisita da un solo thread grazie ad un semaforo binario.
+Task: classe che permette di acquisire e cedere la risorsa/e.
+3 simulazioni che rappresentano i 3 grafici esplicati nelle risorseCondivise
