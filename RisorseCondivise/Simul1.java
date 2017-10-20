@@ -1,8 +1,8 @@
 public class Simul1{
 	public static void main(String args[]){
-		Risorsa risorsa = new Risorsa(1);
-		Task task1 = new Task(risorsa);
-		Task task2 = new Task(risorsa);
+		Risorsa risorsa = new Risorsa("Risorsa");
+		Task task1 = new Task("Task1", new Risorsa[]{risorsa});
+		Task task2 = new Task("Task2", new Risorsa[]{risorsa});
 		Thread thread1 = new Thread(task1);
 		Thread thread2 = new Thread(task2);
 		
