@@ -3,9 +3,6 @@ import java.util.Date;
 
 public class TestDataDownload {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         DataDownloader ddl = new DataDownloader();
         Thread td = new Thread(ddl,"DataDownloaderThread");
@@ -40,7 +37,7 @@ class DataDownloader implements Runnable{
 
 
 class Network extends Thread {
-    private Thread td;  // the downloadr
+    private Thread td;
 
     Network(Thread td, String name){
         super(name);
