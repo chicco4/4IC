@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class Task implements Runnable {
 
     Risorse[] risorse;
-    Risorse questa;
+    Risorse inUso;
     String nome;
     int time;
     Semaphore s;
@@ -25,14 +25,20 @@ public class Task implements Runnable {
 
     @Override
     public void run() {
-        this.setRisorsa();
-        while (!this.s.tryAcquire()) {
+        int time1 = time;//copia del time
+        for (int i = 0; i < this.risorse.length; i++) {// un for per permettere al task di utilizzare tutte le risorse nell'array
+            
+            
+            while (this.inUso == null) {// se non c'è nessuna risorsa in uso ne cerca una
+                this.setRisorsa();
+            }
 
-        }
-        int time1 = time;
-        for (int i = 0; i < this.risorse.length; i++) {
-            while (this.time > 0) {
-                System.out.println(this.nome + " sta utilizzando la risorsa: " + this.questa.getName());
+            while (!this.s.tryAcquire()) {//cerca di acquisire il permit
+
+            }
+
+            while (this.time > 0) {//utilizza la risorsa fino a quando il tempo è maggiore di zero
+                System.out.println(this.nome + " sta utilizzando la risorsa: " + this.inUso.getName());
                 try {
                     TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException ex) {
@@ -40,8 +46,14 @@ public class Task implements Runnable {
                 }
                 this.time--;
             }
-            this.s.release();
-            this.setRisorsa();
+
+            this.s.release();// rilascia il permit della risorsa
+            this.inUso = null;
+
+            while (this.inUso == null) {
+                this.setRisorsa();
+            }
+
             this.time = time1;
         }
 
@@ -49,8 +61,8 @@ public class Task implements Runnable {
 
     public void setRisorsa() {
         for (int i = 0; i < this.risorse.length; i++) {
-            if (this.s!= this.risorse[i].getSemaphore()) {
-                this.questa = this.risorse[i];
+            if (this.s != this.risorse[i].getSemaphore() && this.risorse[i].getSemaphore().availablePermits() > 0) {
+                this.inUso = this.risorse[i];
                 this.s = this.risorse[i].getSemaphore();
                 break;
             }
