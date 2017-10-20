@@ -24,7 +24,6 @@ public class Simul1 {
         try{
             TimeUnit.SECONDS.sleep(15);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Semaphore.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         for(int i=0; i<t.length; i++){

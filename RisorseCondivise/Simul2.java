@@ -18,14 +18,19 @@ public class Simul2 {
         
         for(int i=0; i<t.length; i++){
             t[i] = new Thread(new Task(r, i));
+            try{
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException ex) {
+            }
             t[i].start();
         }
      
         try{
-            TimeUnit.SECONDS.sleep(15);
+            TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException ex) {
-            Logger.getLogger(Semaphore.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        System.out.println("Interrompo");
         
         for(int i=0; i<t.length; i++){
             t[i].interrupt();

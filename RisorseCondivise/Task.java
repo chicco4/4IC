@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -7,7 +8,8 @@ public class Task extends Thread {
     private final int MAX_TIME = 3;
     private Risorsa[] risorse;
     private Risorsa r;
-
+    private ArrayList<Thread> t = new ArrayList();
+    
     private int nThread;
     private int nRisorsa;
 
@@ -24,7 +26,6 @@ public class Task extends Thread {
 
     @Override
     public void run() {
-        System.out.println("ciao "+risorse.length);
         if(r == null){
             boolean esegui = true;
             while (esegui) {
@@ -32,9 +33,13 @@ public class Task extends Thread {
                     try {
                         TimeUnit.SECONDS.sleep(nRandom.nextInt(MAX_TIME) + 1);
 
-                        new Thread(new Task(risorse[i], nThread, i)).start();
+                        Thread t1 = new Thread(new Task(risorse[i], nThread, i));
+                        t.add(t1);
+                        t1.start();
                         
                     } catch (InterruptedException ex) {
+                        for(int j=0; j<t.size(); j++)
+                            t.get(j).interrupt();
                         System.out.println("Thread"+ nThread + " has been termianted");
                         esegui = false;
                         break;
@@ -44,12 +49,12 @@ public class Task extends Thread {
         } else {
             try {
                 r.semaphore.acquire();
-                //System.out.println("Thread" + nThread + " is using Risorsa" + nRisorsa);
+                System.out.println("Thread" + nThread + " is using Risorsa" + nRisorsa);
                 TimeUnit.SECONDS.sleep(nRandom.nextInt(MAX_TIME) + 1);
-                r.semaphore.release();
                 System.out.println ("Thread"+ nThread + " has finished to use Risorsa" + nRisorsa);
             } catch (InterruptedException ex) {
-                System.out.println("Thread"+ nThread + " has been termianted");
+            } finally {
+                r.semaphore.release();
             }
         }
     }
