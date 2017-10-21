@@ -1,2 +1,2 @@
 # CIAO AMICO :)
-![Imgur](https://media.giphy.com/media/yifTRs3TidIju/giphy.gif)
+![Imgur](https://media2.giphy.com/media/DLUCCgyrbeOMU/giphy.gif)
