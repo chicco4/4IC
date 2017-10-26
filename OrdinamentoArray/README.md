@@ -1,2 +1,2 @@
-#ordinamento array MultiThread
-######uso dell'algoritmo merge sort
+# ordinamento array MultiThread
+###### uso dell'algoritmo merge sort
