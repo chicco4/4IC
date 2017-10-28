@@ -4,7 +4,7 @@
 Creo una classe Sort con vari metodi che permettono di ordinare un'array di int, grazie all'utilizzo di un numero di thread stabilito dall'utente ; ivi indicati i risultati ricavati da varie prove:
     
     1) il numero di thread da utilizzare per una maggiore efficenza è di 6 thread 
-    ([qui](ref) si trovano i risultati delle varie prove)
+    ([qui](https://github.com/zuccante/4IC/blob/ravagnangiacomo/OrdinaArray/dati.csv) si trovano i risultati delle varie prove)
     
     2) inserendo come variabile  threads nel metodo sort un numero maggiore o uguale a 13 il 
     sistema solleverà un'eccezione di tipo "OutOfMemoryError"
