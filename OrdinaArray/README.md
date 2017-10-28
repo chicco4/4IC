@@ -18,6 +18,7 @@ La classe Sort contiene vari metodi
 <strong>swap</strong> metodo primitivo che permette di cambiare due posizioni dell'array tra di loro, usato non per meccesità ma solo per un risparmo di righe di codice.
 
 Nel main di prova si usa un metodo:
+
 <strong>randomArray</strong> genera un'array di int di lunghezza inserita dall'utente e con valori pseudocasuali, il cui        massimo valore raggiungibile è inserito dall'utente.
 
 Con l'opzione nanoTime() si tiene conto dei tempi che il metodo sort impiega per ordinare tutto l'array per questioni di leggibilità i valori vengono espressi in millisecondi.
