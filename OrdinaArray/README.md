@@ -34,6 +34,8 @@ that pulls the trigger of the starting pistol.
 This exercise led me to the conclusion that the best way to sort an array is by using the old single thread solution, that resulted better
 than the multi thread one under every point of view
 
+_@author Rossato Francesco_
+
 ---
 
 >I don't know why he saved my life. Maybe in those last moments he loved life more than he ever had before.
