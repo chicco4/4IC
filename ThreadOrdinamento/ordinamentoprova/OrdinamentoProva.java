@@ -6,31 +6,47 @@ package ordinamentoprova;
  */
 public class OrdinamentoProva {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //Creazione Array
-        int[] modello = new int[600000];
+        int[] modello = new int[60];
         //Riempimento array
         riempiArray(modello, 300);
-        int[] a = modello;
-        int[] b = modello;
-        int[] c = modello;
-        int[] d = modello;
+        int[] a = new int[70];
+        riempiArray(a,300);
+        int[] b = new int[70];
+        riempiArray(b,300);
+        int[] c = new int[70];
+        riempiArray(c,300);
+        int[] d = new int[70];
+        riempiArray(d,300);
         //Inizializzazione array
         Thread threadBubble = new Thread();
         Thread threadMerge = new Thread();
         Thread threadSelection = new Thread();
         Thread threadQuick = new Thread();
-        //Inizializzazione oggetti
-        MergeSort mergeSorter = new MergeSort(a, threadMerge);
-        BubbleSort bubbleSorter = new BubbleSort(b, threadBubble);
-        QuickSort quickSorter =new QuickSort(c,threadSelection);
-        SelectionSort selectionSorter=new SelectionSort(d,threadQuick);
-        //Inizio dei vari thread
+        
+        //Inizializzazione oggetti 
+        BubbleSort bubbleSorter = new BubbleSort(a, threadBubble);
+        MergeSort mergeSorter = new MergeSort(b, threadMerge);
+        SelectionSort selectionSorter=new SelectionSort(c,threadSelection);
+        QuickSort quickSorter =new QuickSort(2,d,threadQuick); //con doppio thread
+        
+        //Start dei vari thread
         bubbleSorter.start();
         mergeSorter.start();
-        quickSorter.start();
         selectionSorter.start();
+        quickSorter.start();//doppio thread
         
+        
+        
+        Thread.sleep(1000);
+        bubbleSorter.stampa();
+        Thread.sleep(1000);
+        mergeSorter.stampa();
+        Thread.sleep(1000);
+        selectionSorter.stampa();
+        Thread.sleep(1000);
+        quickSorter.stampa();
         
         
 

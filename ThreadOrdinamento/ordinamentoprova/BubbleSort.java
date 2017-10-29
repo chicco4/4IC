@@ -1,4 +1,5 @@
 package ordinamentoprova;
+
 import java.text.DecimalFormat;
 
 /**
@@ -15,25 +16,29 @@ public class BubbleSort extends Thread {
         this.thread = thread;
     }
 
-    public void sort() {
+    private void sort() {
+
+        int n = array.length;
         int temp = 0;
-        int j = array.length - 1;
-        while (j > 0) {
-            for (int i = 0; i < j; i++) {
-                if (array[i] > array[i + 1]) //scambiare il '>' con '<' per ottenere un ordinamento decrescente
-                {
-                    temp = array[i];
-                    array[i] = array[i + 1];
-                    array[i + 1] = temp;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < (n - i); j++) {
+                if (array[j - 1] > array[j]) {
+                    //swap the elements!
+                    temp = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = temp;
                 }
+
             }
-            j--;
         }
     }
+       
 
+    @Override
     public void run() {
         long tempo = getTimeSort();
-        String tempoinsec=arrotondaPerDifetto((double)tempo/1000000000);
+        String tempoinsec = arrotondaPerDifetto((double) tempo / 1000000000);
         System.out.println("Tempo impiegato per il BubbleSort: " + tempo + " nano secondi o circa " + tempoinsec + " secondi");
     }
 
@@ -56,6 +61,6 @@ public class BubbleSort extends Thread {
 
         DecimalFormat df = new DecimalFormat("#.#####"); // 2 cifre decimali
 
-        return  df.format(value);
+        return df.format(value);
     }
 }
