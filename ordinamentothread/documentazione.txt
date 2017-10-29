@@ -1,0 +1,4 @@
+Il programma prevede l'uso di n thread per ordinare un vettore e confrontare la velocità con e senza l'utilizzo di piu thread.
+Viene usato l'ordinamento quicksort in quanto quello piu conveniente per ordinare ricorsivamente, dividendo in 2 l'array, atribuendo
+a 2 thread la parte di destra e di sinistra, ridividendo le 2 parti in altre 2 e cosi via fino a n thread.
+Si puo notare che l'ordinamento con thread è efficace solo in caso di array lunghi e che quindi non ha senso usarlo su pochi elementi. 
