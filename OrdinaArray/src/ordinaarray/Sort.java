@@ -66,7 +66,7 @@ public final class Sort{
                 default:
                     System.out.println("**"+typeOfSorting+"** NON TROVATO");
             }
-        //Nel caso in cui stringa che indica il tipo di ordinamento fosse 'null', e quindi non è stata specificata dall' utente,
+        //Nel caso in cui la stringa che indica il tipo di ordinamento fosse 'null', e quindi non è stata specificata dall' utente,
         //di default viene fatto l' ordinamento dell' array con il 'quick sort'
         }else
             quickSort(arrayOrdinato);
