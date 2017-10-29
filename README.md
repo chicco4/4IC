@@ -20,3 +20,5 @@ L'esercizio consiste nel generare tre situazioni la prima in cui due task utiliz
 Nel risorsecondivise troverete 5 file il primo chimamato Risorse i 3 Simul e il Task.
 
 L'esercizio consiste nel generare un array e ordinarlo trammite l'utilizzo di thread e paragonare il tempo del sorting trammite thread con quello senza thread.
+
+![Giphy](https://media.giphy.com/media/xTiTnJ3BooiDs8dL7W/giphy.gif)
