@@ -1,7 +1,5 @@
 # ordinaArray
-Come metodo di ordinamento ho utilizzato il bubble sort. Ho quindi creato i due metodi che ne permettono il tuo funzionamento 
-#### Results
-Using the method 
+Come metodo di ordinamento ho utilizzato il bubble sort. Ho quindi creato i due metodi che ne permettono il tuo funzionamento  
 ```java
 sort()
 swapNumbers()
@@ -9,8 +7,6 @@ swapNumbers()
 
 Ho fatto poi due prove: un ordinamento con un singolo thread ed un ordinamento con due thread.
 Utilizzando il comando 
-#### Results
-Using the method 
 ```java
 System.nanoTime()
 ```
