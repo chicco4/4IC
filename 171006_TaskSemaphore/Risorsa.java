@@ -1,11 +1,5 @@
 
 import java.util.concurrent.Semaphore;
-
-public class Risorsa{
-	private Semaphore semaphore;
-package test;
-import java.util.concurrent.Semaphore;
-
 /**
  *
  * @author giacomo.ravagnan
