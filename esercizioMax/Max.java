@@ -3,73 +3,97 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package eserciziomax;
+package maxesercizio;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 /**
  *
  * @author matteo.pagano
- * @param <Comparable>
  */
 public class Max implements Runnable {
-	private int[] array;
-	private int max=0;
-	static int val=0;
 
-	public Max(int[] array) {
-		this.array = array;
-	}
+    private int[] array;
+    private int max = 0;
+    static int val = 0;
 
-	@Override
-	public void run() {
-		int max = 0;
-		for (int i = 0; i < this.array.length; i++) {
-			if (array[i] > max) {
-				max = array[i];
-			}
-		}
-		this.max=max;
-	}
+    public Max(int[] array) {
+        this.array = array;
+    }
 
-	public int getMax() {
-		return max;
-	}
+    @Override
+    public void run() {
+        int max = 0;
+        for (int i = 0; i < this.array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        this.max = max;
+    }
 
-	public static void main(String[] args) {
-		int[] arr = new int[200];
-		riempimento(arr);
-		Max a = new Max(dividi(arr,2));
-		Max b = new Max(dividi(arr,1));
-		a.run();
-		b.run();
-		System.out.println(a.getMax()+"   "+b.getMax());
-		System.out.println(Math.max(a.getMax(), b.getMax()));
-	}
+    public int getMax() {
+        return max;
+    }
 
-	static int numRandom(int min, int max) {
-		return (int) (Math.random() * (max - min) + min);
-	}
+    public static void main(String[] args) {
+        int[] arr = new int[20];
+        riempimento(arr, 200000000);
+        int numeroArray = 5;
+        Max[] lista = new Max[numeroArray];
+        for (int i = 0; i < lista.length; i++) {
+            lista[i] = new Max(dividi(arr, numeroArray));
+            lista[i].run();
+        }
+        
+        stampaIMax(lista);
+    }
 
-	static void riempimento(int[] a) {
-		for (int i = 0; i < a.length; i++) {
-			a[i] = numRandom(1, 200);
-		}
-	}
+    static int numRandom(int min, int max) {
+        return (int) (Math.random() * (max - min) + min);
+    }
 
-	static int[] dividi(int[] array, int nthread) {
-		int[] array1;
-		array1 = new int[array.length / nthread];
-		
-		for (int i = val, j = 0; i < array.length/nthread; i++, j++) {
-			array1[j] = array[i];
-		}
-		val+=array.length/2;
-		return array1;
-	}
-	
-	static public void stampa(int array[]){
-		for (int i = 0; i < array.length; i++) {
-			System.out.println(array[i]);
-		}
-	}
+    static void riempimento(int[] a, int max) {
+        for (int i = 0; i < a.length; i++) {
+            a[i] = numRandom(1, max);
+        }
+    }
+
+    static int[] dividi(int[] array, int nArray) {
+        int[] array1;
+        array1 = new int[array.length / nArray];
+        int divisioneArray = array.length / nArray;
+
+        for (int i = val, j = 0; j < divisioneArray; i++, j++) {
+            array1[j] = array[i];
+        }
+        val += array.length / nArray;
+        return array1;
+    }
+
+    static public void stampa(int array[]) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(i + " " + array[i]);
+        }
+    }
+
+    static public void stampaIMax(Max[] i) {
+        for (int j = 0; j < i.length; j++) {
+            System.out.print(i[j].getMax() + "  ");
+        }
+
+    }
+
+    public static int searchMax(int[] array) {
+        int max = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
+    }
 }
-
